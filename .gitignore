@@ -1,6 +1,7 @@
 .idea/
 .vscode/
 node_modules/
+newman/
 build/
 tmp/
 temp/
