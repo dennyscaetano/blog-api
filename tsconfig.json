@@ -8,6 +8,9 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    // "strict": true,
+    // "noImplicitAny": true,
+    // "resolveJsonModule": true
   }
 }
