@@ -10,6 +10,7 @@ import { swaggerOptions } from './config/swagger'; // Importa as configurações
 import { postRouter } from './routes/posts'; // Importa as rotas de posts
 
 const app = express(); // Cria uma instância do Express
+export default app;
 
 app.use(express.json()); // Habilita o parsing de JSON no corpo das requisições
 app.use(cors()); // Habilita o CORS para permitir requisições de diferentes origens

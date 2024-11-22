@@ -1,4 +1,4 @@
-import { app } from './app'; // Importa a aplicação Express configurada
+import app from './app'; // Importa a aplicação Express configurada
 
 const PORT = 3000; // Define a porta em que o servidor irá escutar
 const server = app.listen(PORT, () => {
