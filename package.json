@@ -30,8 +30,8 @@
       "typeorm": "0.3.6"
    },
    "scripts": {
-      "start": "npx kill-port 3000 && ts-node src/server.ts",
-      "dev": "npx kill-port 3000 && nodemon --exec ts-node src/server.ts",
+      "start": "npx kill-port 3003 && ts-node src/server.ts",
+      "dev": "npx kill-port 3003 && nodemon --exec ts-node src/server.ts",
       "typeorm": "typeorm-ts-node-commonjs"
    }
 }

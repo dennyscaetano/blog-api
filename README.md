@@ -10,5 +10,5 @@ Passos para executar a API:
 Após executar a API, é possível acessar a documentação por meio da url:
 
 ```
-http://localhost:3000/docs
+http://localhost:3003/docs
 ```
