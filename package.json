@@ -23,6 +23,7 @@
       "jsonwebtoken": "^9.0.0",
       "morgan": "^1.10.0",
       "newman": "^6.2.1",
+      "newman-reporter-htmlextra": "^1.23.1",
       "reflect-metadata": "^0.1.13",
       "sqlite3": "^5.1.4",
       "swagger-jsdoc": "^6.2.8",

@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "b8276178-fe39-4cf3-83f0-27967e86f4f3",
 		"name": "Dennys Blog-API EndPoints",
-		"description": "# blog-api\n\nAPI para estudo de testes de API.\n\nPassos para executar a API:\n\n1. Execute o comando `npm i` ou `yarn`\n    \n2. Execute o comando `yarn start` ou `npm start`\n    \n\nApós executar a API, é possível acessar a documentação por meio da url:\n\n[http://localhost:3000/docs<br><br>](http://localhost:3000/docs)",
+		"description": "# blog-api\n\nAPI para estudo de testes de API.\n\nPassos para executar a API:\n\n1. Execute o comando `npm i` ou `yarn`\n    \n2. Execute o comando `yarn start` ou `npm start`\n    \n\nApós executar a API, é possível acessar a documentação por meio da url:\n\n[https://blog-api-662802771021.southamerica-east1.run.app/docs/](https://blog-api-662802771021.southamerica-east1.run.app/docs/)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "19863227"
 	},
@@ -54,16 +54,85 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/users",
+					"raw": "{{gcpUrl}}/users",
 					"host": [
-						"{{baseUrl}}"
+						"{{gcpUrl}}"
 					],
 					"path": [
 						"users"
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Register a new user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"{{$randomFirstName}} {{$randomLastName}}\",\r\n  \"email\": \"{{$randomEmail}}\",\r\n  \"password\": \"Senha1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gcpUrl}}/users",
+							"host": [
+								"{{gcpUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"4e-ErhjPBoQP4twQJh8sfp9P0n/e7o\""
+						},
+						{
+							"key": "X-Cloud-Trace-Context",
+							"value": "6e03f4ee2516fb8ac510d03600d15b4c"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 26 Nov 2024 18:22:17 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Content-Length",
+							"value": "78"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"name\": \"Clyde Hilpert\",\n        \"email\": \"Tierra.Parisian76@yahoo.com\",\n        \"id\": 3\n    }\n}"
+				}
+			]
 		},
 		{
 			"name": "Register a user with invalid data",
@@ -116,16 +185,85 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/users",
+					"raw": "{{gcpUrl}}/users",
 					"host": [
-						"{{baseUrl}}"
+						"{{gcpUrl}}"
 					],
 					"path": [
 						"users"
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Register a user with invalid data",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Abcd\",\r\n  \"email\": \"{{userEmail}}\",\r\n  \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gcpUrl}}/users",
+							"host": [
+								"{{gcpUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"ba-mv34yTY/alEMnEi34BzOBz8DmzY\""
+						},
+						{
+							"key": "X-Cloud-Trace-Context",
+							"value": "3cd3099b6aa88c89ac5ca31a0e634869;o=1"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 26 Nov 2024 18:22:31 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Content-Length",
+							"value": "186"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"messages\": [\n        \"A user with this email already exists\",\n        \"User name must have between 5 and 50 characters\",\n        \"Password must contain at least 8 characters, 1 uppercase character, and 1 digit\"\n    ]\n}"
+				}
+			]
 		},
 		{
 			"name": "Register a user with an invalid email",
@@ -168,16 +306,89 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/users",
+					"raw": "{{gcpUrl}}/users",
 					"host": [
-						"{{baseUrl}}"
+						"{{gcpUrl}}"
 					],
 					"path": [
 						"users"
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Register a user with an invalid email",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Sylvester Ortiz\",\r\n  \"email\": \"invalidemail\",\r\n  \"password\": \"Senha1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://blog-api-662802771021.southamerica-east1.run.app/users",
+							"protocol": "https",
+							"host": [
+								"blog-api-662802771021",
+								"southamerica-east1",
+								"run",
+								"app"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"1e-d+3twcE7p2ohUngeJPPg2JhrlDg\""
+						},
+						{
+							"key": "X-Cloud-Trace-Context",
+							"value": "cf6d93ba4a246ba2863245536897d3d5"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 26 Nov 2024 18:22:38 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"messages\": [\n        \"Invalid email\"\n    ]\n}"
+				}
+			]
 		},
 		{
 			"name": "Authenticate a user",
@@ -214,9 +425,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/users/login",
+					"raw": "{{gcpUrl}}/users/login",
 					"host": [
-						"{{baseUrl}}"
+						"{{gcpUrl}}"
 					],
 					"path": [
 						"users",
@@ -224,7 +435,77 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Authenticate a user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"{{userEmail}}\",\r\n  \"password\": \"Senha1234\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gcpUrl}}/users/login",
+							"host": [
+								"{{gcpUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"150-BgJfvVRx5tA7kFj8jGTQ/h9Sm+Q\""
+						},
+						{
+							"key": "X-Cloud-Trace-Context",
+							"value": "f045df8f73f22e35f82dd9948742cfb1;o=1"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 26 Nov 2024 18:22:45 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Content-Length",
+							"value": "336"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"authorized\": true,\n    \"user\": {\n        \"id\": 3,\n        \"name\": \"Clyde Hilpert\",\n        \"email\": \"Tierra.Parisian76@yahoo.com\"\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiVGllcnJhLlBhcmlzaWFuNzZAeWFob28uY29tIiwidGltZXN0YW1wIjoiMjAyNC0xMS0yNlQxODoyMjo0NS41NzFaIiwiaWF0IjoxNzMyNjQ1MzY1LCJleHAiOjE3MzI2NDg5NjV9.EcyXpbcG4gibNneNi14k9KHu9WcRv8pxe-upFDyewkY\"\n}"
+				}
+			]
 		},
 		{
 			"name": "Register a new post",
@@ -287,16 +568,89 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/posts",
+					"raw": "{{gcpUrl}}/posts",
 					"host": [
-						"{{baseUrl}}"
+						"{{gcpUrl}}"
 					],
 					"path": [
 						"posts"
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Register a new post",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Handcrafted Metal Bacon\",\r\n  \"content\": \"Upgradable multimedia superstructure\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://blog-api-662802771021.southamerica-east1.run.app/posts",
+							"protocol": "https",
+							"host": [
+								"blog-api-662802771021",
+								"southamerica-east1",
+								"run",
+								"app"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"a5-1nYWA6i4GVLg/XKlo3Dq73+qkHE\""
+						},
+						{
+							"key": "X-Cloud-Trace-Context",
+							"value": "7899b3a126de95541751b7312688f6ad"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 26 Nov 2024 18:22:50 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Content-Length",
+							"value": "165"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"post\": {\n        \"title\": \"Generic Concrete Soap\",\n        \"content\": \"Optional actuating success\",\n        \"user\": {\n            \"id\": 3,\n            \"name\": \"Clyde Hilpert\",\n            \"email\": \"Tierra.Parisian76@yahoo.com\"\n        },\n        \"id\": 2\n    }\n}"
+				}
+			]
 		},
 		{
 			"name": "Retrieves a post by its id",
@@ -351,9 +705,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/posts/{{postId}}",
+					"raw": "{{gcpUrl}}/posts/{{postId}}",
 					"host": [
-						"{{baseUrl}}"
+						"{{gcpUrl}}"
 					],
 					"path": [
 						"posts",
@@ -361,7 +715,81 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Retrieves a post by its id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://blog-api-662802771021.southamerica-east1.run.app/posts/",
+							"protocol": "https",
+							"host": [
+								"blog-api-662802771021",
+								"southamerica-east1",
+								"run",
+								"app"
+							],
+							"path": [
+								"posts",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"a5-YaxTuAwPKvgxKfXkV3L061aDs5s\""
+						},
+						{
+							"key": "X-Cloud-Trace-Context",
+							"value": "3ccdbaabe822f216938f1b76c26c3ffb"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 26 Nov 2024 18:22:54 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Content-Length",
+							"value": "165"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"post\": {\n        \"id\": 2,\n        \"title\": \"Generic Concrete Soap\",\n        \"content\": \"Optional actuating success\",\n        \"user\": {\n            \"id\": 3,\n            \"name\": \"Clyde Hilpert\",\n            \"email\": \"Tierra.Parisian76@yahoo.com\"\n        }\n    }\n}"
+				}
+			]
 		},
 		{
 			"name": "Delete a post by its id",
@@ -420,9 +848,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/posts/{{postId}}",
+					"raw": "{{gcpUrl}}/posts/{{postId}}",
 					"host": [
-						"{{baseUrl}}"
+						"{{gcpUrl}}"
 					],
 					"path": [
 						"posts",
@@ -430,7 +858,81 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Delete a post by its id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://blog-api-662802771021.southamerica-east1.run.app/posts/",
+							"protocol": "https",
+							"host": [
+								"blog-api-662802771021",
+								"southamerica-east1",
+								"run",
+								"app"
+							],
+							"path": [
+								"posts",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"1a-XrW4VbXHKSS/geYbFMGFJouGuCc\""
+						},
+						{
+							"key": "X-Cloud-Trace-Context",
+							"value": "c8f5311dae23ebb8c17e2ab71a720263;o=1"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 26 Nov 2024 18:22:58 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Content-Length",
+							"value": "26"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Post deleted\"\n}"
+				}
+			]
 		},
 		{
 			"name": "Delete a user by email",
@@ -483,9 +985,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/users/{{userEmail}}",
+					"raw": "{{gcpUrl}}/users/{{userEmail}}",
 					"host": [
-						"{{baseUrl}}"
+						"{{gcpUrl}}"
 					],
 					"path": [
 						"users",
@@ -493,7 +995,81 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Delete a user by email",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://blog-api-662802771021.southamerica-east1.run.app/users/",
+							"protocol": "https",
+							"host": [
+								"blog-api-662802771021",
+								"southamerica-east1",
+								"run",
+								"app"
+							],
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"1a-+BFCXZBji7vrbkrwyE5s2YKViik\""
+						},
+						{
+							"key": "X-Cloud-Trace-Context",
+							"value": "a13fcf53073ef5c9cc93d88c0fd809d4"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 26 Nov 2024 18:23:02 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Content-Length",
+							"value": "26"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User deleted\"\n}"
+				}
+			]
 		}
 	],
 	"event": [
@@ -542,7 +1118,7 @@
 		},
 		{
 			"key": "gcpUrl",
-			"value": "",
+			"value": "https://blog-api-662802771021.southamerica-east1.run.app",
 			"type": "string"
 		}
 	]
